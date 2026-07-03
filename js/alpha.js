@@ -17,6 +17,28 @@
     links.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => links.classList.remove("open")));
   }
 
+  /* ---- smooth-scroll in-page links, offset for the fixed header ---- */
+  const HEADER_OFFSET = 74;
+  function scrollToId(id, smooth) {
+    const el = document.getElementById(id);
+    if (!el) return false;
+    const y = Math.max(0, el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET);
+    window.scrollTo({ top: y, behavior: smooth && !reduce ? "smooth" : "auto" });
+    return true;
+  }
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const href = a.getAttribute("href");
+      if (!href || href === "#") return;
+      const id = href.slice(1);
+      if (!document.getElementById(id)) return;
+      e.preventDefault();
+      scrollToId(id, true);
+      history.replaceState(null, "", "#" + id);
+      if (links) links.classList.remove("open");
+    });
+  });
+
   /* ---- scroll progress + condensed nav ---- */
   const progress = document.querySelector(".progress");
   const shell = document.querySelector(".nav-shell");
@@ -141,6 +163,6 @@
   /* ---- land on hash after load (sticky header offset via CSS scroll-margin) ---- */
   window.addEventListener("load", () => {
     const id = location.hash.slice(1);
-    if (id) { const el = document.getElementById(id); if (el) setTimeout(() => el.scrollIntoView(), 60); }
+    if (id && document.getElementById(id)) setTimeout(() => scrollToId(id, false), 60);
   });
 })();
