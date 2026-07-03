@@ -148,10 +148,10 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(var(--gold), var(--cyan)); border-radius: 2px; }
 .tl-item { position: relative; padding: 0 0 34px 34px; }
 .tl-item::before { content: ""; position: absolute; left: -1px; top: 4px; width: 16px; height: 16px;
-  border-radius: 50%; background: var(--paper); border: 3px solid var(--gold); box-shadow: 0 0 0 4px var(--paper); }
-.tl-item .yr { font-family: var(--mono); font-size: .82rem; font-weight: 600; color: var(--founders); letter-spacing: .05em; }
-.tl-item h4 { margin: 4px 0 4px; font-size: 1.18rem; }
-.tl-item p { margin: 0; color: var(--muted); font-size: .96rem; }
+  border-radius: 50%; background: var(--navy-deep); border: 3px solid var(--gold); box-shadow: 0 0 0 4px var(--navy-deep); }
+.tl-item .yr { font-family: var(--mono); font-size: .82rem; font-weight: 600; color: var(--gold); letter-spacing: .05em; }
+.tl-item h4 { margin: 4px 0 4px; font-size: 1.18rem; color: #fff; }
+.tl-item p { margin: 0; color: #bcccdd; font-size: .96rem; }
 
 /* ---------- focus cards ---------- */
 .focus-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
@@ -210,8 +210,9 @@ img { max-width: 100%; display: block; }
 .exp-empty { padding: 40px 0; color: var(--muted); font-style: italic; }
 
 /* ---------- sections on navy ---------- */
-.on-navy { background: linear-gradient(160deg, var(--navy-deep), var(--navy)); color: #fff; }
-.on-navy h2, .on-navy h3 { color: #fff; }
+.on-navy { background: linear-gradient(160deg, var(--navy-deep), var(--navy)); color: #eaf1f8; }
+.on-navy h2, .on-navy h3, .on-navy h4 { color: #fff; }
+.on-navy p { color: #c3d2e2; }
 .on-navy .eyebrow { color: var(--gold); }
 .on-navy .lead { color: #d5e2ef; }
 .on-paper2 { background: var(--paper-2); }
