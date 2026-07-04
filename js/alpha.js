@@ -166,21 +166,3 @@
     if (id && document.getElementById(id)) setTimeout(() => scrollToId(id, false), 60);
   });
 })();
-
-/* Feedback form → opens the visitor's email client to the alpha feedback address. */
-(function () {
-  var f = document.getElementById("feedback-form");
-  if (!f) return;
-  f.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var msg = (f.message.value || "").trim();
-    if (!msg) return;
-    var email = (f.email.value || "").trim();
-    var body = msg + (email ? "\n\n— from: " + email : "");
-    window.location.href =
-      "mailto:feedback@alpha.catherine-crump.com" +
-      "?subject=" + encodeURIComponent("Site feedback (alpha)") +
-      "&body=" + encodeURIComponent(body);
-    f.innerHTML = '<p class="feedback-done">Thanks! Your email app should be opening — hit send and it\'s on its way.</p>';
-  });
-})();

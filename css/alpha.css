@@ -270,27 +270,6 @@ img { max-width: 100%; display: block; }
   .scroll-cue .line { animation: none; }
 }
 
-/* ---------------------------- Feedback form ---------------------------- */
-.feedback-form { display: flex; flex-direction: column; gap: 14px; max-width: 580px; }
-.feedback-form textarea,
-.feedback-form input {
-  width: 100%;
-  font-family: var(--sans);
-  font-size: 1rem;
-  color: var(--ink);
-  padding: 13px 16px;
-  border: 1.5px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--card);
-  transition: border-color .18s var(--ease), box-shadow .18s var(--ease);
-}
-.feedback-form textarea { resize: vertical; min-height: 116px; line-height: 1.5; }
-.feedback-form textarea:focus,
-.feedback-form input:focus {
-  outline: none;
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 4px rgba(53, 196, 232, .16);
-}
-.feedback-form .btn { align-self: flex-start; }
-.feedback-note { color: var(--muted); font-size: .88rem; margin: 2px 0 0; }
-.feedback-done { color: var(--navy); font-weight: 700; font-size: 1.05rem; margin: 8px 0; }
+/* ---------------------------- Feedback note ---------------------------- */
+.feedback-note { color: var(--muted); font-size: .9rem; margin: 16px 0 0; }
+.feedback-note a { color: inherit; text-decoration: underline; }
